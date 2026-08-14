@@ -1,0 +1,29 @@
+# Secrets — 絕不進 Git
+.env
+.env.local
+.env.*.local
+*-secrets.txt
+secrets/
+credentials.json
+service-account*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Build / Deploy
+dist/
+build/
+*.log
