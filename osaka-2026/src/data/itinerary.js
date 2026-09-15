@@ -439,12 +439,21 @@ export const places = {
 
   // -- 拉麵 & 麵店 --
   'menya-seiryu': {
-    name: 'Menya Seiryu(麺屋 青龍 / 麺や 清流,店名待確認)',
+    name: '麺や 清流(Menya Seiryu)',
     kind: 'food',
-    googleMapsUrl: gmap('Menya Seiryu Osaka ramen'),
-    description: '大阪拉麵店 — 具體是「麺屋 青龍」還是「麺や 清流」搜尋結果不確定,建議 Doria 現場核對。',
-    unverified: true,
-    unverifiedNote: '搜尋不到確定的中文名對應。可能是東大阪的「麺や 清流」(2024 Tabelog Ramen 100 選),但也可能是別家。請以 Google Maps 你原本記下的那家為準。',
+    googleMapsUrl: gmap('麺や 清流 東大阪'),
+    description: '東大阪長瀨站附近的拉麵名店 — 2024 Tabelog Ramen 大阪百名店。',
+    richDescription: `
+      東大阪市小若江 1-4-3,近鐵長瀨站附近。是 2024 年 Tabelog 大阪拉麵百名店
+      入選店之一,價位落在 ¥1,500 左右。營業時間依星期變動(週日 11:00-15:00、
+      週一 11:00-20:00、週二 11:00-17:00、週三 11:00-20:00、週四 11:00-17:00,
+      週六與國定假日休 — 時間常變動,去之前務必看官方 SNS 或 Google Maps)。
+      位置不在市中心,是「特意去朝聖」型的拉麵店。
+    `.trim(),
+    hoursNote: '依星期變動(週六與國定假日休),請以現場為準',
+    highlights: ['2024 Tabelog Ramen 大阪百名店', '¥1,500 左右'],
+    caveats: ['營業日/時間變動大,務必事前確認', '離市中心較遠(東大阪)'],
+    source: 'https://autoreserve.com/ja/restaurants/tuDLb8e79dVUzhJuyXWZ',
   },
   'totomen-en': {
     name: 'Totomen En(布施 / 拉麵)',
@@ -717,15 +726,6 @@ export const places = {
     source: 'https://matcha-jp.com/tw/6320',
   },
 
-  // -- 未確認 --
-  'yakiniku-seafood-unknown': {
-    name: 'Yakiniku and seafood ...(店名截斷,未確認)',
-    kind: 'food',
-    googleMapsUrl: gmap('Yakiniku seafood 大阪 心齋橋'),
-    description: '原 PDF 只顯示「Yakiniku and seafood ...」,店名被截斷 — 需要 Doria 補完整名稱。',
-    unverified: true,
-    unverifiedNote: 'PDF 上店名被截斷、原始搜尋沒有明確對應。可能是心齋橋的「TSURU牛」(¥4,480 吃到飽含海鮮)或其他燒肉+海鮮店,請 Doria 在 Google Maps 找到原本記下的那家再補上完整名稱。',
-  },
 }
 
 // ---------- default stops (行程時間軸) ----------
@@ -792,7 +792,6 @@ export const defaultStops = [
   { id: 's-b-2',  placeId: 'totomen-en',             day: 'backup', order: 2 },
   { id: 's-b-3',  placeId: 'nishimura-noodle',       day: 'backup', order: 3 },
   { id: 's-b-4',  placeId: 'toyo-ceramics-museum',   day: 'backup', order: 4 },
-  { id: 's-b-5',  placeId: 'yakiniku-seafood-unknown', day: 'backup', order: 5 },
   { id: 's-b-6',  placeId: 'rikimaru-umeda-doyama',  day: 'backup', order: 6 },
   { id: 's-b-7',  placeId: 'kirimen-umeda',          day: 'backup', order: 7 },
   { id: 's-b-8',  placeId: 'kasumi-awaza',           day: 'backup', order: 8 },
