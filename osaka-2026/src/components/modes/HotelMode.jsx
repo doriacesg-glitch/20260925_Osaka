@@ -4,11 +4,11 @@ export default function HotelMode() {
   return (
     <div className="min-h-full pb-6">
       {/* Hero */}
-      <header className="px-5 pt-6 pb-5 bg-gradient-to-b from-washi-pink/30 to-transparent">
-        <p className="text-xs text-ink/50">🏠 你們的六天大本營</p>
-        <h1 className="text-2xl font-bold text-sage-deep mt-1">{hotel.nameZh}</h1>
-        <p className="text-xs text-ink/50 mt-1">{hotel.nameEn}</p>
-        <p className="text-xs text-ink/50">{hotel.brand}</p>
+      <header className="px-5 pt-6 pb-5 bg-gradient-to-b from-washi-pink/40 to-transparent">
+        <p className="text-xs text-ink-soft tracking-wider uppercase">六天大本營</p>
+        <h1 className="text-3xl font-hand font-bold text-primary mt-1 leading-tight">{hotel.nameZh}</h1>
+        <p className="text-xs text-ink-faint mt-2">{hotel.nameEn}</p>
+        <p className="text-xs text-ink-faint">{hotel.brand}</p>
       </header>
 
       {/* Vibe */}

@@ -23,10 +23,11 @@ export default function ItineraryMode({ stops }) {
 
   return (
     <div className="min-h-full">
-      <header className="px-5 pt-6 pb-3">
-        <h1 className="text-2xl font-bold text-sage-deep">📖 全部行程</h1>
-        <p className="text-xs text-ink/60 mt-1">
-          點任一格看詳情或編輯 · 目前不支援拖曳(下次更新)
+      <header className="px-5 pt-6 pb-4 bg-gradient-to-b from-accent-soft/40 to-transparent">
+        <p className="text-xs text-ink-soft tracking-wider uppercase">Itinerary</p>
+        <h1 className="text-4xl font-hand font-bold text-primary mt-1">全部行程</h1>
+        <p className="text-xs text-ink-soft mt-1">
+          點任一格看詳情或編輯 · 拖曳排序下次更新
         </p>
       </header>
 

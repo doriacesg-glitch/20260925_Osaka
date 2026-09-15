@@ -12,29 +12,29 @@ export function StopCard({ stop, place, onClick, showOrder = true }) {
   return (
     <button
       onClick={onClick}
-      className="w-full text-left bg-white/70 backdrop-blur rounded-xl p-3 border border-ink/5 hover:border-sage-deep/30 hover:shadow-sm transition-all"
+      className="w-full text-left bg-white rounded-2xl p-3.5 border border-edge shadow-soft hover:shadow-lift hover:border-primary/20 transition-all cursor-pointer"
     >
       <div className="flex items-start gap-3">
-        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-sage/20 flex items-center justify-center text-lg">
+        <div className="flex-shrink-0 w-11 h-11 rounded-full bg-primary-soft/60 flex items-center justify-center text-lg">
           {kindIcon(place.kind)}
         </div>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-0.5">
             {stop.arriveAt && (
-              <span className="text-xs font-mono text-sage-deep">{stop.arriveAt}</span>
+              <span className="text-xs font-mono text-primary font-semibold">{stop.arriveAt}</span>
             )}
             {showOrder && stop.order != null && (
-              <span className="text-[10px] text-ink/40">#{stop.order + 1}</span>
+              <span className="text-[10px] text-ink-faint">#{stop.order + 1}</span>
             )}
           </div>
-          <h3 className="text-sm font-semibold text-ink leading-tight truncate">
+          <h3 className="text-base font-semibold text-ink leading-tight truncate">
             {place.name}
           </h3>
           {place.description && (
-            <p className="text-xs text-ink/60 mt-1 line-clamp-2">{place.description}</p>
+            <p className="text-xs text-ink-soft mt-1 line-clamp-2">{place.description}</p>
           )}
           {stop.note && (
-            <p className="text-xs text-sage-deep mt-1 italic">📝 {stop.note}</p>
+            <p className="text-xs text-accent mt-1.5 italic bg-accent-soft/50 rounded-md px-2 py-1">📝 {stop.note}</p>
           )}
         </div>
       </div>

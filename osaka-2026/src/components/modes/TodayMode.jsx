@@ -31,15 +31,15 @@ export default function TodayMode({ stops, today }) {
   return (
     <div className="min-h-full">
       {/* Header */}
-      <header className="px-5 pt-6 pb-4 bg-gradient-to-b from-sage/20 to-transparent">
-        <p className="text-xs text-ink/50">{TRIP.title}</p>
-        <h1 className="text-2xl font-bold text-sage-deep mt-1">
+      <header className="px-5 pt-6 pb-5 bg-gradient-to-b from-primary-soft/40 to-transparent">
+        <p className="text-xs text-ink-soft tracking-wider uppercase">{TRIP.title}</p>
+        <h1 className="text-4xl font-hand font-bold text-primary mt-1">
           {today.status === 'before' && `倒數 ${today.daysUntil} 天`}
           {today.status === 'during' && `第 ${today.day} 天`}
           {today.status === 'after' && `旅程結束了`}
         </h1>
-        <p className="text-sm text-ink/70 mt-1">
-          {today.status === 'before' && `9/25 出發 · 現在正在夢想中`}
+        <p className="text-sm text-ink-soft mt-1">
+          {today.status === 'before' && '9/25 出發 · 現在正在夢想中'}
           {today.status === 'during' && `${dayDate(today.day)} · Doria 🐧 & Ray 🐱`}
           {today.status === 'after' && `已經 ${today.daysSince} 天前的回憶`}
         </p>
@@ -53,12 +53,12 @@ export default function TodayMode({ stops, today }) {
               key={d}
               onClick={() => setViewDay(d)}
               className={[
-                'flex-shrink-0 px-3 py-1.5 rounded-full text-xs transition-colors',
+                'flex-shrink-0 px-4 py-1.5 rounded-full text-xs transition-colors',
                 viewDay === d
-                  ? 'bg-sage-deep text-paper'
-                  : 'bg-white/60 text-ink/60 hover:bg-white',
+                  ? 'bg-primary text-paper shadow-soft'
+                  : 'bg-paper2 text-ink-soft hover:bg-white',
                 today.status === 'during' && today.day === d && viewDay !== d
-                  ? 'ring-1 ring-sage-deep/50'
+                  ? 'ring-1 ring-primary/40'
                   : '',
               ].join(' ')}
             >
@@ -77,7 +77,7 @@ export default function TodayMode({ stops, today }) {
           dayStops.map((stop, idx) => (
             <div key={stop.id} className="relative">
               {idx === nextStopIndex && (
-                <div className="absolute -left-2 top-0 bottom-0 w-1 rounded-full bg-sage-deep" />
+                <div className="absolute -left-2 top-0 bottom-0 w-1 rounded-full bg-accent" />
               )}
               <StopCard
                 stop={stop}

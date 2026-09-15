@@ -47,10 +47,11 @@ export default function MemoriesMode() {
 
   return (
     <div className="min-h-full pb-6">
-      <header className="px-5 pt-6 pb-3">
-        <h1 className="text-2xl font-bold text-sage-deep">📷 回憶</h1>
-        <p className="text-xs text-ink/60 mt-1">
-          照片只存在你的手機/瀏覽器,不會同步給 Ray 也不會上傳雲端
+      <header className="px-5 pt-6 pb-4 bg-gradient-to-b from-washi-yellow/50 to-transparent">
+        <p className="text-xs text-ink-soft tracking-wider uppercase">Memories</p>
+        <h1 className="text-4xl font-hand font-bold text-primary mt-1">回憶</h1>
+        <p className="text-xs text-ink-soft mt-1">
+          照片只存在你的手機,不同步、不上傳
         </p>
       </header>
 

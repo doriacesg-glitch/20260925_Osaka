@@ -81,18 +81,18 @@ function Fullscreen({ children }) {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-8 text-center">
       <div>
-        <h1 className="text-xl font-bold text-sage-deep mb-1">{TRIP.title}</h1>
+        <h1 className="text-3xl font-hand font-bold text-primary mb-2">{TRIP.title}</h1>
         {children}
       </div>
     </div>
   )
 }
 
-// 極簡 tab bar — Gemini 之後可以在 components/ui/ 做個漂亮版取代這個
+// 底部 tab bar
 function BottomTabs({ current, onChange }) {
   return (
     <nav
-      className="fixed bottom-0 inset-x-0 border-t border-ink/10 bg-paper/95 backdrop-blur"
+      className="fixed bottom-0 inset-x-0 border-t border-edge bg-paper/95 backdrop-blur-md shadow-lift"
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
     >
       <div className="flex">
@@ -101,14 +101,14 @@ function BottomTabs({ current, onChange }) {
             key={m.id}
             onClick={() => onChange(m.id)}
             className={[
-              'flex-1 py-2 flex flex-col items-center gap-0.5 transition-colors',
+              'flex-1 py-2.5 flex flex-col items-center gap-0.5 transition-all cursor-pointer',
               current === m.id
-                ? 'text-sage-deep'
-                : 'text-ink/50 hover:text-ink/70',
+                ? 'text-primary scale-105'
+                : 'text-ink-faint hover:text-ink-soft',
             ].join(' ')}
           >
             <span className="text-lg" aria-hidden>{m.icon}</span>
-            <span className="text-xs">{m.label}</span>
+            <span className={`text-[10px] ${current === m.id ? 'font-semibold' : ''}`}>{m.label}</span>
           </button>
         ))}
       </div>
