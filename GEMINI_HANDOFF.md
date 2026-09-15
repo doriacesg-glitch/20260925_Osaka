@@ -10,16 +10,13 @@
 - **不要動**:`hooks/`、`lib/`、`config/`、`data/`
 - 若 UI 需要新資料欄位 → **回報 Doria**,由 Claude 加進資料層。
 
-## 視覺方向(Doria 定案)
+## 視覺方向
 
-- **氛圍**:水彩手繪風,兩個人一起編織的旅遊小書 —— 旅程中自動長出來,回國變收藏
-- **配色**(已在 `tailwind.config.js`):
-  - `paper` `#f5efe4` 米色底
-  - `sage` / `sage-deep` `#a7b89a` / `#7a8c6d` 鼠尾草綠(主色)
-  - `ink` `#3b3a36` 文字
-  - `washi-pink` `#e8c7c1` / `washi-blue` `#b8cbd6` 和紙膠帶點綴色
-- **元素**:拍立得、和紙膠帶、手寫字體(fontFamily `hand`)
-- **Mascot**:企鵝(Doria)、貓(Ray)
+**視覺方向由你和 Doria 直接討論** — 這份文件不預設任何配色/風格。
+
+`tailwind.config.js` 目前有幾組佔位 tokens(`paper` / `sage` / `ink` / `washi-*` /
+`font-hand`),你可以直接改成你和 Doria 討論後的方向,或整組換掉重來。
+資料層完全不依賴這些顏色名字。
 
 ---
 
