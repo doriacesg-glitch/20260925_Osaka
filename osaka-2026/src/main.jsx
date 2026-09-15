@@ -6,6 +6,11 @@ import { registerSW } from 'virtual:pwa-register'
 
 registerSW({ immediate: true })
 
+// dev 模式掛 __seed 到 window,方便一次性初始化 Firestore
+if (import.meta.env.DEV) {
+  import('./lib/seedFirestore.js')
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
