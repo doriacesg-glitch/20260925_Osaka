@@ -11,8 +11,9 @@ import { StopDetailSheet } from '../ui/StopDetailSheet'
 // - 旅程結束:結束卡 + Day 6 回顧
 // - 也可以左右切換看其他天
 
-export default function TodayMode({ stops, today }) {
-  const mutations = useItineraryMutations(stops)
+export default function TodayMode({ stops, today, previewMode }) {
+  const realMutations = useItineraryMutations(stops)
+  const mutations = previewMode ? null : realMutations
   const [viewDay, setViewDay] = useState(
     today.status === 'during' ? today.day : today.status === 'before' ? 1 : 6,
   )

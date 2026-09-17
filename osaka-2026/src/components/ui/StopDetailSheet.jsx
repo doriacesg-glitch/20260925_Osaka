@@ -60,7 +60,7 @@ export function StopDetailSheet({ open, onClose, stop, place, mutations }) {
 
         {/* 時間 */}
         <Row label="抵達時間">
-          {editingTime ? (
+          {editingTime && mutations ? (
             <div className="flex gap-2">
               <input
                 type="time"
@@ -68,13 +68,15 @@ export function StopDetailSheet({ open, onClose, stop, place, mutations }) {
                 onChange={(e) => setTimeDraft(e.target.value)}
                 className="flex-1 px-2 py-1 rounded border border-ink/20 bg-white"
               />
-              <button onClick={saveTime} className="px-3 py-1 rounded bg-sage-deep text-paper text-xs">存</button>
+              <button onClick={saveTime} className="px-3 py-1 rounded bg-primary text-paper text-xs">存</button>
               <button onClick={() => setEditingTime(false)} className="px-3 py-1 rounded bg-ink/10 text-xs">取消</button>
             </div>
           ) : (
             <div className="flex items-center gap-2">
               <span className="font-mono">{stop.arriveAt ?? '—'}</span>
-              <button onClick={() => setEditingTime(true)} className="text-xs text-sage-deep underline">改</button>
+              {mutations && (
+                <button onClick={() => setEditingTime(true)} className="text-xs text-primary underline">改</button>
+              )}
             </div>
           )}
         </Row>
@@ -86,7 +88,7 @@ export function StopDetailSheet({ open, onClose, stop, place, mutations }) {
 
         {/* 備註 */}
         <Row label="備註">
-          {editingNote ? (
+          {editingNote && mutations ? (
             <div className="space-y-2">
               <textarea
                 value={noteDraft}
@@ -96,14 +98,16 @@ export function StopDetailSheet({ open, onClose, stop, place, mutations }) {
                 placeholder="記得訂位、忌口、集合點..."
               />
               <div className="flex gap-2">
-                <button onClick={saveNote} className="px-3 py-1 rounded bg-sage-deep text-paper text-xs">存</button>
+                <button onClick={saveNote} className="px-3 py-1 rounded bg-primary text-paper text-xs">存</button>
                 <button onClick={() => { setEditingNote(false); setNoteDraft(stop.note ?? '') }} className="px-3 py-1 rounded bg-ink/10 text-xs">取消</button>
               </div>
             </div>
           ) : (
             <div className="flex items-center gap-2">
-              <span className="italic text-ink/70">{stop.note || '(尚無)'}</span>
-              <button onClick={() => setEditingNote(true)} className="text-xs text-sage-deep underline">改</button>
+              <span className="italic text-ink-soft">{stop.note || '(尚無)'}</span>
+              {mutations && (
+                <button onClick={() => setEditingNote(true)} className="text-xs text-primary underline">改</button>
+              )}
             </div>
           )}
         </Row>

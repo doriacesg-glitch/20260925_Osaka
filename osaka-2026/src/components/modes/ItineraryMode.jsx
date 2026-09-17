@@ -14,8 +14,9 @@ const DAY_LABELS = {
   backup: { label: '備選區', date: '想去就加進去', accent: 'bg-purple-100' },
 }
 
-export default function ItineraryMode({ stops }) {
-  const mutations = useItineraryMutations(stops)
+export default function ItineraryMode({ stops, previewMode }) {
+  const realMutations = useItineraryMutations(stops)
+  const mutations = previewMode ? null : realMutations
   const [selectedStop, setSelectedStop] = useState(null)
   const [collapsed, setCollapsed] = useState({}) // { day: true } 表示摺疊
 
