@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,11 +11,11 @@ html, body, #root {
 body {
   @apply bg-paper text-ink font-sans antialiased;
   font-feature-settings: 'kern', 'liga', 'palt';
-}
-
-/* 手寫字體專用 class,方便直接套用 */
-.font-hand {
-  letter-spacing: 0.01em;
+  /* 淡淡的水彩紋理 — 用 SVG grain,避免真圖 */
+  background-image:
+    radial-gradient(ellipse at 10% 0%, rgba(107, 78, 150, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 100%, rgba(231, 109, 60, 0.05) 0%, transparent 50%);
+  background-attachment: fixed;
 }
 
 /* 尊重 prefers-reduced-motion */
@@ -26,7 +26,7 @@ body {
   }
 }
 
-/* 拍立得白邊框卡片(給之後回憶頁用) */
+/* 拍立得 */
 .polaroid {
   background: #FFFEF9;
   padding: 12px 12px 40px;
@@ -34,7 +34,7 @@ body {
   border-radius: 4px;
 }
 
-/* 和紙膠帶裝飾 */
+/* 和紙膠帶 */
 .washi-tape {
   position: relative;
 }
@@ -49,4 +49,18 @@ body {
   background: currentColor;
   opacity: 0.5;
   border-radius: 2px;
+}
+
+/* 水彩暈染邊(給主要標題/hero 用) */
+.watercolor-edge {
+  mask-image:
+    radial-gradient(ellipse 100% 60% at 50% 50%, black 60%, transparent 100%);
+  -webkit-mask-image:
+    radial-gradient(ellipse 100% 60% at 50% 50%, black 60%, transparent 100%);
+}
+
+/* 燭光發光 */
+.candle-glow {
+  filter: drop-shadow(0 0 8px rgba(255, 184, 77, 0.6))
+          drop-shadow(0 0 16px rgba(255, 184, 77, 0.3));
 }

@@ -10,6 +10,22 @@ export const hotel = {
   checkIn: '15:00',
   checkOut: '10:00',
 
+  // 聯絡資訊
+  address: '〒556-0002 大阪市浪速區惠美須西 1-3-13',
+  addressEn: '1-3-13 Ebisunishi, Naniwa-ku, Osaka 556-0002 Japan',
+  phone: '+81-6-4394-8500',       // 主要總機(暫填,Doria 依訂房確認)
+  phoneDisplay: '06-4394-8500',
+  email: 'reservation@dotonbori-hotel.jp',
+  googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('温泉大阪逸之彩酒店 日本橋'),
+
+  // 照片(先放 placeholder 路徑,Round 2/3 可放 public/hotel/*.jpg)
+  photos: [
+    { src: '/hotel/exterior.jpg', caption: '外觀:惠美須町 5 號出口正對面' },
+    { src: '/hotel/lobby.jpg',    caption: '大廳 24h 免費飲料機' },
+    { src: '/hotel/onsen.jpg',    caption: '天然溫泉大浴場' },
+    { src: '/hotel/room.jpg',     caption: '雙床房示意' },
+  ],
+
   // 位置與交通(從 PDF 備註 + 搜尋結果)
   location: {
     area: '惠美須町 / 新世界',
@@ -58,10 +74,4 @@ export const hotel = {
     '5 號出口最近但是樓梯,拖行李的日子走 3 號出口',
   ],
 
-  // 官方 / 訂房連結(Doria 訂房用的可以自己貼上)
-  links: {
-    ctrip: 'https://hotels.ctrip.com/hotels/10836901.html',
-    ezTravel: 'https://hotel.eztravel.com.tw/detail-osaka-219-10836901/hot-spring-osaka-hinode-hotel-nipponbashi/',
-    trip: 'https://hk.trip.com/hotels/osaka-hotel-detail-10836901/hot-spring-osaka-hinode-hotel-nipponbashi/',
-  },
 }

@@ -51,7 +51,7 @@ export function StopDetailSheet({ open, onClose, stop, place, mutations }) {
               href={place.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs px-3 py-1.5 rounded-full bg-sage-deep text-paper hover:bg-sage-deep/90"
+              className="text-xs px-3 py-1.5 rounded-full bg-primary text-paper shadow-pumpkin hover:bg-primary-light"
             >
               🗺 開 Google Maps
             </a>
